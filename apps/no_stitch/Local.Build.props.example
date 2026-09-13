@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!-- Change this path to your local PCL 1.15.1 installation. -->
+    <PCL_ROOT>C:\Program Files\PCL 1.15.1</PCL_ROOT>
+
+    <!-- Name registered in Qt VS Tools. Change only if your Qt installation uses a different registered name. -->
+    <QtInstallName>6.5.3_msvc2019_64</QtInstallName>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ZhuChuangKouWindow</class>
+ <widget class="QMainWindow" name="ZhuChuangKouWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>780</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>点云孔识别</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="6,0,0,0">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>4</number>
+    </property>
+    <property name="topMargin">
+     <number>4</number>
+    </property>
+    <property name="rightMargin">
+     <number>4</number>
+    </property>
+    <property name="bottomMargin">
+     <number>4</number>
+    </property>
+    <item>
+     <widget class="QStackedWidget" name="viewStack">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <widget class="QVTKOpenGLNativeWidget" name="vtkWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>1</horstretch>
+         <verstretch>1</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #6b7280; border-radius: 4px; background-color: #111827;</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="viewControlsLayout">
+      <property name="spacing">
+       <number>8</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="labelViewOpacity">
+        <property name="text">
+         <string>底图透明度</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="sliderBaseOpacity">
+        <property name="minimumSize">
+         <size>
+          <width>140</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="minimum">
+         <number>2</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>38</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelViewPointSize">
+        <property name="text">
+         <string>点大小</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="sliderPointSize">
+        <property name="minimumSize">
+         <size>
+          <width>140</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
+        </property>
+        <property name="value">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="viewControlsSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="toolbarLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="labelFlow">
+        <property name="text">
+         <string>▸ 处理流程:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDenoise">
+        <property name="text">
+         <string>SOR降噪</string>
+        </property>
+        <property name="toolTip">
+         <string>统计离群点降噪：保留当前点云高度范围，只清理孤立噪点。</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelArrow1">
+        <property name="text">
+         <string>→</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #bdc3c7; font-size: 16px; font-weight: bold;</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QPushButton" name="btnHole">
+        <property name="text">
+         <string>立即重识别</string>
+        </property>
+        <property name="toolTip">
+         <string>左键点击孔位会自动加入选种并触发识别；此按钮用于立即按当前全部编号重新识别。</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelMaxHoleRadius">
+        <property name="text">
+         <string>最大孔半径(mm)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="spinMaxHoleRadius">
+        <property name="toolTip">
+         <string>只调这一项即可。程序会联动局部搜索范围和候选半径上限；默认10mm，识别更大孔时再调高。</string>
+        </property>
+        <property name="minimum">
+         <double>2.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>30.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>1.000000000000000</double>
+        </property>
+        <property name="decimals">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <double>10.000000000000000</double>
+        </property>
+        <property name="suffix">
+         <string> mm</string>
+        </property>
+       </widget>
+      </item>
+
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelStatus">
+      <property name="text">
+       <string>就绪 — 请打开点云文件开始</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #7f8c8d; font-size: 12px; padding: 4px 12px;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1100</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionOpen_PCD"/>
+    <addaction name="actionSave_PCD"/>
+    <addaction name="separator"/>
+    <addaction name="actionSaveWithHoles"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="actionUndo"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen_PCD">
+   <property name="text">
+    <string>打开文件...</string>
+   </property>
+   <property name="toolTip">
+    <string>支持打开 PCD/PLY/CSV 格式的单个点云文件。打开后直接进入三维识别视图；CSV1 高度矩阵会询问 X/Y 网格间距。</string>
+   </property>
+  </action>
+  <action name="actionSave_PCD">
+   <property name="text">
+    <string>保存当前点云为PCD</string>
+   </property>
+   <property name="toolTip">
+    <string>将当前处理后的点云保存为PCD二进制压缩格式。保存的是当前视图中的点云状态，包括经过底面去除、孔识别可视化等处理后的结果。建议在处理完成后导出保存。</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>撤销(&amp;U)</string>
+   </property>
+   <property name="toolTip">
+    <string>撤销上一步点云处理操作（底面去除、体素降采样等）。快捷键：Ctrl+U。最多保留50步历史记录，超出后自动丢弃最早的操作。注意：孔识别结果不在撤销范围内。</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>重做(&amp;R)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionSaveWithHoles">
+   <property name="text">
+    <string>同时保存孔数据</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="toolTip">
+    <string>保存 PCD 时在文件头注释中嵌入孔参数，重新打开后可跳过孔识别。</string>
+   </property>
+  </action>
+  <action name="actionShowHoleDock">
+   <property name="text">
+    <string>孔参数列表</string>
+   </property>
+   <property name="toolTip">
+    <string>显示/隐藏孔检测结果面板</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKOpenGLNativeWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QVTKOpenGLNativeWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

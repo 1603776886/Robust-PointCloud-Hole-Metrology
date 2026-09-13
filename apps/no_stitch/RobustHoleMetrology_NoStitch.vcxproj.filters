@@ -1,0 +1,123 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="01_界面与入口">
+      <UniqueIdentifier>{830F1FDB-2EC6-5A0C-A50C-285B4E170FDC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_点云基础\IO与降噪">
+      <UniqueIdentifier>{233BDC0F-7774-5E1A-848E-D00CBF8EF104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_点云基础\显示">
+      <UniqueIdentifier>{990D36D7-A29A-5DB4-9485-E7DDB881E1AC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Hole识别\主流程">
+      <UniqueIdentifier>{53F2A64C-62C5-5A56-A3A7-365C4FC5C118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Hole识别\几何与法线">
+      <UniqueIdentifier>{0CC4CB62-75D9-5035-8B23-D28A7FF25397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Hole识别\分析与位姿">
+      <UniqueIdentifier>{0EE016AE-DB8B-574D-B490-EB4618E6DE57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Hole识别\类型与输出">
+      <UniqueIdentifier>{FF768E42-33E2-5479-B0A4-A767707B233A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_手动Hole">
+      <UniqueIdentifier>{991F53FF-AA87-55FE-A4FD-1FEED179D688}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DianYun_IO.cpp">
+      <Filter>02_点云基础\IO与降噪</Filter>
+    </ClCompile>
+    <ClCompile Include="DianYunJiangZao_Filter.cpp">
+      <Filter>02_点云基础\IO与降噪</Filter>
+    </ClCompile>
+    <ClCompile Include="DianYunJichu_Core.cpp">
+      <Filter>02_点云基础\IO与降噪</Filter>
+    </ClCompile>
+    <ClCompile Include="DianYunXianshi_View.cpp">
+      <Filter>02_点云基础\显示</Filter>
+    </ClCompile>
+    <ClCompile Include="HoleCanshuShuchu_Export.cpp">
+      <Filter>03_Hole识别\类型与输出</Filter>
+    </ClCompile>
+    <ClCompile Include="HoleFenxi_Analysis.cpp">
+      <Filter>03_Hole识别\分析与位姿</Filter>
+    </ClCompile>
+    <ClCompile Include="HoleJihe_Geometry.cpp">
+      <Filter>03_Hole识别\几何与法线</Filter>
+    </ClCompile>
+    <ClCompile Include="HoleShibie_Recognition.cpp">
+      <Filter>03_Hole识别\主流程</Filter>
+    </ClCompile>
+    <ClCompile Include="ZhuChuangKou_Window.cpp">
+      <Filter>01_界面与入口</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>01_界面与入口</Filter>
+    </ClCompile>
+    <ClCompile Include="ShouDongHole_JiheJianCe.cpp">
+      <Filter>04_手动Hole</Filter>
+    </ClCompile>
+    <ClCompile Include="ShouDongHole_WeiziZhicheng.cpp">
+      <Filter>04_手动Hole</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DianYun_IO.h">
+      <Filter>02_点云基础\IO与降噪</Filter>
+    </ClInclude>
+    <ClInclude Include="DianYunJiangZao_Filter.h">
+      <Filter>02_点云基础\IO与降噪</Filter>
+    </ClInclude>
+    <ClInclude Include="DianYunJichu_Core.h">
+      <Filter>02_点云基础\IO与降噪</Filter>
+    </ClInclude>
+    <ClInclude Include="DianYunLeixing_Types.h">
+      <Filter>02_点云基础\IO与降噪</Filter>
+    </ClInclude>
+    <ClInclude Include="HoleCanshuShuchu_Export.h">
+      <Filter>03_Hole识别\类型与输出</Filter>
+    </ClInclude>
+    <ClInclude Include="HoleFenxi_Analysis.h">
+      <Filter>03_Hole识别\分析与位姿</Filter>
+    </ClInclude>
+    <ClInclude Include="HoleJihe_Geometry.h">
+      <Filter>03_Hole识别\几何与法线</Filter>
+    </ClInclude>
+    <ClInclude Include="HoleLeixing_Types.h">
+      <Filter>03_Hole识别\类型与输出</Filter>
+    </ClInclude>
+    <ClInclude Include="HoleShibie_Recognition.h">
+      <Filter>03_Hole识别\主流程</Filter>
+    </ClInclude>
+    <ClInclude Include="HoleFaXian_Normal.h">
+      <Filter>03_Hole识别\几何与法线</Filter>
+    </ClInclude>
+    <ClInclude Include="HoleWeizi_Pose.h">
+      <Filter>03_Hole识别\分析与位姿</Filter>
+    </ClInclude>
+    <ClInclude Include="ShouDongHole_Manual.h">
+      <Filter>04_手动Hole</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="ZhuChuangKou_Window.ui">
+      <Filter>01_界面与入口</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="QtWidgets1.qrc">
+      <Filter>01_界面与入口</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="DianYunXianshi_View.h">
+      <Filter>02_点云基础\显示</Filter>
+    </QtMoc>
+    <QtMoc Include="ZhuChuangKou_Window.h">
+      <Filter>01_界面与入口</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

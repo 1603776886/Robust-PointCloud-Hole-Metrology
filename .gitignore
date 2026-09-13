@@ -1,0 +1,53 @@
+# Visual Studio / MSBuild
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+*.VC.db
+*.VC.VC.opendb
+*.pdb
+*.ilk
+*.idb
+*.ipch
+*.tlog
+*.lastbuildstate
+
+# Qt generated files
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.qmlc
+*.jsc
+
+# Local machine dependency configuration
+**/Local.Build.props
+
+# Runtime/export artifacts
+*.log
+*.tmp
+*.bak
+*.csv
+*.pcd
+*.ply
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Archives are release artifacts, not source
+*.zip
+*.7z
+*.rar
+
+# Generated product/release output
+out/
