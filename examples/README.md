@@ -6,4 +6,4 @@ The public examples are intended only to demonstrate the workflow of the reposit
 
 
 
-Only publish data for which redistribution is permitted. Keep individual files comfortably below GitHub's regular file-size limits; use a separate approved data-distribution mechanism if a legitimate public dataset is too large for ordinary Git storage.
+
