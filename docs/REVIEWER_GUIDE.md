@@ -1,12 +1,11 @@
-# Reviewer guide
+# Reviewer Guide 鈥?Research Demo / Development Preview
 
-> **Research Demo / Development Preview**  
 > Demonstration implementation of robust geometric metrology for incomplete 3D point clouds.  
 > The public repository contains only the demonstration-oriented software components and selected reproducible examples.
 
-This public tree intentionally publishes only the selected single-cloud/no-stitch GUI implementation. There is no stitching module and no CLI/batch harness in the public demo.
+This public repository intentionally contains only the selected **single-cloud / no-stitch Research Demo GUI**. It is not the complete engineering system, complete project deliverable, complete dataset, or an official software release of any funding programme or organization.
 
-Fast source-review entry points:
+## Fast source-review entry points
 
 - `apps/no_stitch/main.cpp`
 - `apps/no_stitch/ZhuChuangKou_Window.*`
@@ -16,6 +15,10 @@ Fast source-review entry points:
 - `apps/no_stitch/HoleFenxi_Analysis.*`
 - `apps/no_stitch/HoleWeizi_Pose.h`
 
-For execution without a development environment, use the Setup.exe attached to the GitHub Release rather than rebuilding the source.
+## Fast execution path
 
-See `RESEARCH_DEMO_SCOPE.md` for the public/non-public boundary.
+For execution without a development environment, use the standalone Setup.exe attached to the GitHub Release. If public example point clouds are present under `examples/`, they may be used to exercise the demonstration workflow.
+
+## Public/non-public boundary
+
+See [`RESEARCH_DEMO_SCOPE.md`](RESEARCH_DEMO_SCOPE.md).

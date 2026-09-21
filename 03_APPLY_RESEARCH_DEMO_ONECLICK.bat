@@ -15,10 +15,9 @@ if errorlevel 1 (
 echo.
 echo Public wording updated successfully.
 echo.
-echo IMPORTANT:
-echo   1. Run 01_BUILD_SETUP_ONECLICK.bat once to rebuild the installer
-echo      with the Research Demo display name.
-echo   2. Then use 02_UPLOAD_GITHUB_ONECLICK.bat, or manually commit/push
-echo      these public-text changes if you only want to update the repository.
+echo Next:
+echo   - Run 04_SYNC_RESEARCH_DEMO_SOURCE.bat to sync these text changes.
+echo   - Or use 05_APPLY_AND_SYNC_RESEARCH_DEMO_ONECLICK.bat next time.
+echo   - Run 01_BUILD_SETUP_ONECLICK.bat only when you want a refreshed installer.
 echo.
 pause

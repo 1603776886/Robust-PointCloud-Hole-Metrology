@@ -1,10 +1,10 @@
-# Research Demo release workflow (no-stitch only)
+# Research Demo Windows Release Workflow
 
-## Goal
+## Scope
 
-The public release is a **Research Demo / Development Preview** containing only the selected **no-stitch** GUI implementation. End users receive one Windows x64 installer EXE and do not install the development toolchain.
+The public binary is a **Research Demo / Development Preview** containing only the selected **no-stitch** GUI implementation.
 
-The release does not represent the complete engineering system, complete project deliverables, complete experimental datasets, or an official software release of any funding programme or sponsoring organization.
+It does not represent the complete engineering system, complete research-project deliverables, complete experimental datasets, an industrial deployment package, or an official software release of any funding programme or organization.
 
 ## One-click build
 
@@ -14,68 +14,51 @@ Double-click:
 01_BUILD_SETUP_ONECLICK.bat
 ```
 
-The script:
+The build/package script:
 
 1. runs repository safety checks;
-2. locates Visual Studio/MSBuild, Qt 6.5.3 and PCL 1.15.x;
-3. rebuilds `apps/no_stitch/RobustHoleMetrology_NoStitch.sln` as `Release | x64`;
-4. copies the executable to a clean deployment directory as `RobustHoleMetrology.exe`;
-5. runs Qt's `windeployqt` to collect the Qt DLLs and plugins;
-6. resolves and copies the transitive PCL/VTK/Boost/FLANN/OpenNI2/Qhull/lz4 DLL dependencies needed by the program;
-7. preserves the OpenNI2 driver runtime tree when present;
-8. downloads Microsoft's official x64 Visual C++ Redistributable installer for inclusion in Setup;
-9. copies available third-party license/notice files into `licenses/`;
-10. compiles a single Windows installer with Inno Setup.
+2. locates the required Visual Studio/MSBuild, Qt, and PCL development environment;
+3. rebuilds the no-stitch GUI as `Release | x64`;
+4. creates a clean deployment directory;
+5. deploys Qt runtime DLLs/plugins;
+6. collects the required PCL/VTK and related runtime dependencies;
+7. includes the OpenNI2 runtime tree when required;
+8. bundles the Microsoft Visual C++ Redistributable installer;
+9. copies available third-party license/notice material; and
+10. builds a single Windows installer with Inno Setup.
 
-Output:
+Expected output:
 
 ```text
 out/release/RobustHoleMetrology-Dev-<version>-Setup-x64.exe
 ```
 
-If Inno Setup is not installed, the script attempts to install it through Windows Package Manager (`winget`).
+Only the publisher/developer machine needs the full development toolchain. End users should install the generated Setup.exe.
 
-## Required publisher environment
+## Clean-machine test before release
 
-Only the publisher/build machine needs the development environment. The final user's machine does not.
-
-The script can auto-detect common installs. If detection fails, it prompts for the PCL root and Qt root. Recommended reference values are PCL 1.15.1 and Qt 6.5.3 MSVC x64.
-
-## Clean-machine test — required before public release
-
-Before uploading a release, test the generated Setup.exe on a clean Windows 10/11 x64 VM or PC that does not have Visual Studio, Qt or PCL installed. Confirm:
+Before public distribution, test the generated installer on a clean Windows 10/11 x64 VM or PC without Visual Studio, Qt, or PCL installed. Confirm at minimum:
 
 - installation completes;
-- the application starts from the Start menu;
-- the VTK 3D view appears normally;
-- PCD/PLY files load;
-- the normal point-cloud workflow functions;
-- hole detection/measurement runs;
-- overlays and export work;
+- the application starts;
+- the VTK 3D view initializes normally;
+- supported point-cloud files load;
+- the public recognition/measurement workflow runs;
+- overlays and export behave as expected; and
 - uninstall completes.
 
-A successful build proves packaging/build integrity only; it does not replace metrology validation or imply production certification.
+A successful packaging test verifies deployability only; it does not replace quantitative metrology validation or imply production certification.
 
-## GitHub source + release upload
+## GitHub source + Release upload
 
-After the clean-machine test, double-click:
+After the clean-machine test, use:
 
 ```text
 02_UPLOAD_GITHUB_ONECLICK.bat
 ```
 
-The script safely commits/pushes the repository without force-pushing and creates the GitHub Release for the version in `product/VERSION.txt`. Only the single Setup.exe is uploaded as the release asset.
+or upload the Setup.exe manually through the GitHub Releases web page.
 
-The GitHub Release title and notes identify the binary as a **Research Demo / Development Preview**.
+The GitHub Release title and notes identify the package as a **Research Demo / Development Preview**. Only the standalone Setup.exe should be required by an end user.
 
-For the very first publish, create an **empty** GitHub repository yourself. Do not pre-create README, `.gitignore`, or a license on GitHub because they already exist locally.
-
-## Releasing a new version
-
-Change only:
-
-```text
-product/VERSION.txt
-```
-
-For example, change `0.1.0-dev` to `0.1.1-dev`, rebuild, test, and upload. The release uploader refuses to overwrite an existing version tag/release; this prevents accidental replacement of a previously reviewed binary.
+For public/non-public scope, see [`RESEARCH_DEMO_SCOPE.md`](RESEARCH_DEMO_SCOPE.md).

@@ -77,7 +77,7 @@ $repoFiles | Where-Object {
 } | ForEach-Object {
     $content = Get-Content -LiteralPath $_.FullName -Raw -ErrorAction SilentlyContinue
     if ($null -ne $content -and $content -match '(?i)[A-Z]:\\') {
-        $failures.Add("Machine-specific absolute path in production/build file: $($_.FullName)")
+        $failures.Add("Machine-specific absolute path in application/build file: $($_.FullName)")
     }
 }
 
@@ -89,7 +89,7 @@ $repoFiles | Where-Object {
 } | ForEach-Object {
     $content = Get-Content -LiteralPath $_.FullName -Raw
     if ($content -match 'AutoTest_' -or $content -match '--batch' -or $content -match '--self-check') {
-        $failures.Add("Validation-only token inside production GUI: $($_.FullName)")
+        $failures.Add("Validation-only token inside public GUI: $($_.FullName)")
     }
     if ($content -match 'DianYunPinJie_Stitch') {
         $failures.Add("Stitching code/token inside public no-stitch GUI: $($_.FullName)")

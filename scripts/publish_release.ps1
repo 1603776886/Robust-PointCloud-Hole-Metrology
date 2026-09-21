@@ -168,7 +168,7 @@ if ($releaseQuery.ExitCode -eq 0) {
     throw "GitHub Release $tag already exists. To avoid replacing a reviewed binary, bump product\VERSION.txt and rebuild."
 }
 $notes = 'Research Demo / Development Preview. Demonstration implementation of robust geometric metrology for incomplete 3D point clouds. The public repository contains only the demonstration-oriented software components and selected reproducible examples. Windows x64 standalone installer for the selected no-stitch GUI. This is not the complete engineering system, complete project deliverable, complete dataset, or an official software release of any funding programme. Download the single Setup.exe asset and install; no separate Qt/PCL/VTK development environment is required.'
-& $gh release create $tag $setup -R $repoSlug --target main --title "Robust Hole Metrology - Research Demo / Development Preview $version" --notes $notes --latest
+& $gh release create $tag $setup -R $repoSlug --target main --title "Robust Hole Metrology - Research Demo $version" --notes $notes --latest
 if ($LASTEXITCODE -ne 0) { throw 'GitHub Release creation/upload failed.' }
 Pass 'Release created. Only the standalone Setup.exe was uploaded as the release asset.'
 

@@ -3,11 +3,16 @@ Version 1.0 鈥?2026
 
 Copyright (c) 2026. All rights reserved.
 
-Research Demo / Development Preview scope notice (informational)
-This public repository is a demonstration-oriented subset. It does not represent the complete engineering system, complete project deliverables, complete datasets, or an official software release of any funding programme or sponsoring organization.
+RESEARCH DEMO / DEVELOPMENT PREVIEW 鈥?SCOPE NOTICE
+
+This public repository is a demonstration-oriented subset intended for academic communication, peer review, recruitment/portfolio evaluation, and non-commercial technical evaluation.
+
+It does not represent the complete engineering system, complete research-project deliverables, complete experimental datasets, an industrial deployment package, or an official software release of any funding programme, institution, laboratory, company, project consortium, or collaborating organization.
+
+The public repository contains only the demonstration-oriented software components and selected reproducible examples that the repository publisher has chosen to make public.
 
 1. Permitted use
-Permission is granted, free of charge, to view, clone, compile, and run this repository solely for:
+Permission is granted, free of charge, to view, clone, compile, and run project-authored material in this repository solely for:
 (a) non-commercial academic peer review;
 (b) recruitment, interview, and portfolio evaluation; and
 (c) personal, non-commercial technical evaluation.
@@ -15,18 +20,21 @@ Permission is granted, free of charge, to view, clone, compile, and run this rep
 2. Restrictions
 Except as required by applicable law or expressly permitted in writing by the copyright holder, you may not:
 (a) sell, sublicense, commercially exploit, or provide this software as a service;
-(b) redistribute the source code or compiled binaries outside the ordinary GitHub functionality needed to access or fork the public repository;
+(b) redistribute the project-authored source code or compiled binaries outside the ordinary GitHub functionality needed to access or fork the public repository;
 (c) publish modified or derivative versions;
 (d) remove copyright, attribution, or license notices; or
 (e) use any patent, trademark, trade name, logo, or other branding associated with the project.
 
-3. No patent license
+3. Third-party software
+Third-party software, libraries, binaries, notices, and other materials included or referenced by this repository remain governed by their respective upstream licenses. This license does not relicense third-party material.
+
+4. No patent license
 No patent rights are granted under this license.
 
-4. No warranty
+5. No warranty
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
 
-5. Other permissions
+6. Other permissions
 For commercial use, redistribution, publication of modified versions, or any use beyond the permissions above, obtain separate written permission from the copyright holder.
 
 This is a source-available evaluation license, not an OSI-approved open-source license.
