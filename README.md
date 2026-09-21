@@ -62,7 +62,6 @@ Reference environment:
 - Qt 6.5.3 MSVC x64
 - PCL 1.15.1 Windows bundle
 
-See [`docs/BUILD_WINDOWS.md`](docs/BUILD_WINDOWS.md) for the source-build steps.
 
 ## Third-party software
 
