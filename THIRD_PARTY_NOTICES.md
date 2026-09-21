@@ -11,6 +11,3 @@ The reference Windows build uses:
 - Eigen3, FLANN, OpenNI2, Qhull and lz4 from the reference PCL Windows bundle
 - Microsoft Visual C++ Redistributable (official Microsoft installer)
 
-`01_BUILD_SETUP_ONECLICK.bat` collects the runtime binaries from the publisher's installed Qt/PCL environment. It also copies license/notice files it can find into the packaged application's `licenses` directory. Review that generated license directory before public redistribution, particularly if the local dependency versions differ from the reference versions above.
-
-Qt is deployed dynamically with `windeployqt`; the product source is not statically linked into Qt. The exact obligations depend on the Qt modules/version and the license under which the publisher obtained Qt. The publisher is responsible for confirming the applicable upstream license terms before distribution.
