@@ -26,7 +26,7 @@ The public demo includes the following workflow components:
 
 This repository publishes only the **no-stitch Research Demo GUI**. It does not publish the multi-cloud stitching GUI, CLI/batch stability-validation tools, complete experimental datasets, or other non-public development components.
 
-## For users: download and run
+## Download and run
 
 Normal users do **not** need Visual Studio, Qt, PCL, VTK, Boost, Eigen, OpenNI2, or any other development environment.
 
@@ -46,21 +46,10 @@ The installer contains the runtime dependencies required by the packaged applica
 
 ## Selected reproducible examples
 
-If redistributable example point clouds are provided under `examples/`, they are included only to demonstrate the public Research Demo workflow.
-
-Recommended public example layout:
 
 ```text
-examples/
-鈹溾攢 normal/
-鈹? 鈹斺攢 sample_normal.pcd
-鈹溾攢 partial/
-鈹? 鈹斺攢 sample_partial.pcd
-鈹斺攢 severe/
-   鈹斺攢 sample_severe.pcd
+1.1/1.2/1.3/1.4.pcd
 ```
-
-Only data that you have the right to redistribute should be placed in this repository. Public examples do **not** represent the complete experimental dataset used in associated research or project work.
 
 ## Public repository scope
 
