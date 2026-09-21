@@ -46,21 +46,12 @@ The GitHub source tree intentionally excludes local packaging, publishing, relea
 
 ## Example point clouds
 
-Selected redistributable point clouds may be placed under `examples/` to demonstrate the public workflow. Only data that can legally and appropriately be redistributed should be published.
 
 Suggested structure:
 
 ```text
-examples/
-├─ normal/
-│  └─ sample_normal.pcd
-├─ partial/
-│  └─ sample_partial.pcd
-└─ severe/
-   └─ sample_severe.pcd
+1.1/1.2/1.3/1.4.pcd
 ```
-
-Public examples are demonstration samples only and do not represent the complete experimental or project dataset.
 
 ## Build from source
 
