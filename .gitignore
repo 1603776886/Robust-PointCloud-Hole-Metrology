@@ -19,6 +19,14 @@ x86/
 *.ipch
 *.tlog
 *.lastbuildstate
+*.obj
+*.iobj
+*.ipdb
+*.pch
+*.res
+*.exp
+**/RobustHo.*/
+**/.qt/
 
 # Qt generated files
 moc_*.cpp
@@ -38,16 +46,37 @@ qrc_*.cpp
 *.pcd
 *.ply
 
+# Public example point clouds are explicitly allowed
+!examples/**/*.pcd
+!examples/**/*.ply
+
 # OS / editors
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
 
-# Archives are release artifacts, not source
+# Archives and generated output
 *.zip
 *.7z
 *.rar
-
-# Generated product/release output
 out/
+
+# Local-only packaging / publishing / maintenance tools.
+# Keep these on the developer machine; do not publish them in the source tree.
+.github/
+scripts/
+product/
+CHANGELOG.md
+MANIFEST_SHA256.txt
+PUBLISH_TO_GITHUB.bat
+UPLOAD_TO_GITHUB.md
+VERIFY_PROJECT.bat
+01_BUILD_SETUP_ONECLICK.bat
+02_UPLOAD_GITHUB_ONECLICK.bat
+03_APPLY_RESEARCH_DEMO_ONECLICK.bat
+04_SYNC_RESEARCH_DEMO_SOURCE.bat
+05_APPLY_AND_SYNC_RESEARCH_DEMO_ONECLICK.bat
+BUILD_AND_UPLOAD_ONECLICK.bat
+CLEAN_PUBLIC_GITHUB_ONECLICK.bat
+_public_cleanup_patch/
