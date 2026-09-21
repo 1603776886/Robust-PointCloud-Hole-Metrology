@@ -1,8 +1,10 @@
-# Product release workflow (no-stitch only)
+# Research Demo release workflow (no-stitch only)
 
 ## Goal
 
-The public release contains one product only: the validated **no-stitch** GUI. End users receive one Windows x64 installer EXE and do not install the development toolchain.
+The public release is a **Research Demo / Development Preview** containing only the selected **no-stitch** GUI implementation. End users receive one Windows x64 installer EXE and do not install the development toolchain.
+
+The release does not represent the complete engineering system, complete project deliverables, complete experimental datasets, or an official software release of any funding programme or sponsoring organization.
 
 ## One-click build
 
@@ -52,7 +54,7 @@ Before uploading a release, test the generated Setup.exe on a clean Windows 10/1
 - overlays and export work;
 - uninstall completes.
 
-A successful build only proves packaging/build integrity; it does not replace metrology validation.
+A successful build proves packaging/build integrity only; it does not replace metrology validation or imply production certification.
 
 ## GitHub source + release upload
 
@@ -64,7 +66,7 @@ After the clean-machine test, double-click:
 
 The script safely commits/pushes the repository without force-pushing and creates the GitHub Release for the version in `product/VERSION.txt`. Only the single Setup.exe is uploaded as the release asset.
 
-GitHub CLI (`gh`) is used for the Release operation. If missing, the script attempts to install it through `winget`; if not authenticated, the normal browser authentication flow is opened.
+The GitHub Release title and notes identify the binary as a **Research Demo / Development Preview**.
 
 For the very first publish, create an **empty** GitHub repository yourself. Do not pre-create README, `.gitignore`, or a license on GitHub because they already exist locally.
 

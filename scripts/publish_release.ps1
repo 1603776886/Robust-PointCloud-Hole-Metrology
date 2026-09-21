@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $repo = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $version = (Get-Content -LiteralPath (Join-Path $repo 'product\VERSION.txt') -Raw).Trim()
@@ -83,12 +83,12 @@ if ($LASTEXITCODE -ne 0) { throw 'Post-stage preflight failed. Nothing was uploa
 $headQuery = Invoke-NativeQuery -FilePath $git.Source -Arguments @('rev-parse','--verify','HEAD')
 $headExists = ($headQuery.ExitCode -eq 0)
 if (-not $headExists) {
-    & $git.Source commit -m 'Initial public no-stitch product release'
+    & $git.Source commit -m 'Initial public Research Demo / Development Preview'
     if ($LASTEXITCODE -ne 0) { throw 'Initial commit failed. Check git user.name/user.email configuration.' }
 } else {
     $diffQuery = Invoke-NativeQuery -FilePath $git.Source -Arguments @('diff','--cached','--quiet')
     if ($diffQuery.ExitCode -eq 1) {
-        & $git.Source commit -m "Prepare Robust Hole Metrology $version"
+        & $git.Source commit -m "Prepare Research Demo / Development Preview $version"
         if ($LASTEXITCODE -ne 0) { throw 'Commit failed.' }
     } elseif ($diffQuery.ExitCode -eq 0) {
         Write-Host 'No source changes to commit.' -ForegroundColor Gray
@@ -167,8 +167,8 @@ $releaseQuery = Invoke-NativeQuery -FilePath $gh -Arguments @('release','view',$
 if ($releaseQuery.ExitCode -eq 0) {
     throw "GitHub Release $tag already exists. To avoid replacing a reviewed binary, bump product\VERSION.txt and rebuild."
 }
-$notes = 'Windows x64 standalone installer for the no-stitch Robust Hole Metrology production GUI. Download the single Setup.exe asset and install; no separate Qt/PCL/VTK development environment is required.'
-& $gh release create $tag $setup -R $repoSlug --target main --title "Robust Hole Metrology Development Preview $version" --notes $notes --latest
+$notes = 'Research Demo / Development Preview. Demonstration implementation of robust geometric metrology for incomplete 3D point clouds. The public repository contains only the demonstration-oriented software components and selected reproducible examples. Windows x64 standalone installer for the selected no-stitch GUI. This is not the complete engineering system, complete project deliverable, complete dataset, or an official software release of any funding programme. Download the single Setup.exe asset and install; no separate Qt/PCL/VTK development environment is required.'
+& $gh release create $tag $setup -R $repoSlug --target main --title "Robust Hole Metrology - Research Demo / Development Preview $version" --notes $notes --latest
 if ($LASTEXITCODE -ne 0) { throw 'GitHub Release creation/upload failed.' }
 Pass 'Release created. Only the standalone Setup.exe was uploaded as the release asset.'
 

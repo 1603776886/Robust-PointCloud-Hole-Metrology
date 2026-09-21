@@ -1,6 +1,12 @@
 # Changelog
+## Research Demo public-positioning update
 
-## 0.1.0-dev — product packaging baseline
+- Public repository is explicitly labeled **Research Demo / Development Preview**.
+- README, reviewer/build/release documentation, installer display name, and GitHub Release metadata now use the same demonstration-oriented positioning.
+- Public scope explicitly states that the repository is not the complete engineering system, complete project deliverable, complete dataset, or an official software release of a funding programme.
+- No `apps/no_stitch` algorithm/GUI production source was changed by this positioning update.
+
+## 0.1.0-dev 鈥?product packaging baseline
 
 - Public repository reduced to the validated no-stitch production GUI only.
 - Added one-click Release x64 build and standalone Windows Setup.exe packaging.

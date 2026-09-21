@@ -14,16 +14,16 @@
   #error RepoRoot is required
 #endif
 
-#define MyAppName "Robust Hole Metrology"
+#define MyAppName "Robust Hole Metrology - Research Demo"
 #define MyAppExeName "RobustHoleMetrology.exe"
 
 [Setup]
 AppId={{9323558F-C92A-4C45-A57B-BF6FF3E0A707}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppPublisher=Robust Hole Metrology Project
-DefaultDirName={autopf}\Robust Hole Metrology
-DefaultGroupName=Robust Hole Metrology
+AppPublisher=Robust Hole Metrology Research Demo
+DefaultDirName={autopf}\Robust Hole Metrology Research Demo
+DefaultGroupName=Robust Hole Metrology Research Demo
 DisableProgramGroupPage=yes
 PrivilegesRequired=admin
 ArchitecturesAllowed=x64compatible
@@ -45,9 +45,9 @@ Source: "{#SourceDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs 
 Source: "{#VCRedist}"; DestDir: "{tmp}"; DestName: "vc_redist.x64.exe"; Flags: deleteafterinstall
 
 [Icons]
-Name: "{autoprograms}\Robust Hole Metrology"; Filename: "{app}\{#MyAppExeName}"; WorkingDir: "{app}"
-Name: "{autodesktop}\Robust Hole Metrology"; Filename: "{app}\{#MyAppExeName}"; WorkingDir: "{app}"; Tasks: desktopicon
+Name: "{autoprograms}\Robust Hole Metrology - Research Demo"; Filename: "{app}\{#MyAppExeName}"; WorkingDir: "{app}"
+Name: "{autodesktop}\Robust Hole Metrology - Research Demo"; Filename: "{app}\{#MyAppExeName}"; WorkingDir: "{app}"; Tasks: desktopicon
 
 [Run]
 Filename: "{tmp}\vc_redist.x64.exe"; Parameters: "/install /quiet /norestart"; StatusMsg: "Installing Microsoft Visual C++ Runtime..."; Flags: waituntilterminated
-Filename: "{app}\{#MyAppExeName}"; Description: "Launch Robust Hole Metrology"; WorkingDir: "{app}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\{#MyAppExeName}"; Description: "Launch Robust Hole Metrology - Research Demo"; WorkingDir: "{app}"; Flags: nowait postinstall skipifsilent

@@ -1,6 +1,6 @@
 # Windows source build
 
-The repository contains only the no-stitch production GUI.
+This repository is a **Research Demo / Development Preview** and contains only the selected no-stitch GUI implementation.
 
 Reference environment: Windows x64, Visual Studio 2022/MSVC v143, Qt 6.5.3 MSVC x64, PCL 1.15.1 Windows bundle.
 
@@ -10,3 +10,5 @@ Reference environment: Windows x64, Visual Studio 2022/MSVC v143, Qt 6.5.3 MSVC 
 4. Select `Release | x64` and rebuild.
 
 `Local.Build.props` is intentionally ignored by Git.
+
+For the scope of the public demonstration, see `RESEARCH_DEMO_SCOPE.md`.
